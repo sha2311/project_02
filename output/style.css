@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .nav{
+        @apply relative ml-10 text-[#072125] dark:text-gray-100 font-mono font-bold tracking-[1px] hover:text-[#f44335];
+
+       
+    }
+    .nav::after{
+        @apply content-[''] bg-[#f44335] h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
+    }
+    .nav:hover::after{
+        @apply w-[100%]
+    }
+}
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#switch:checked ~ label div.toggle-dot {
+    @apply translate-x-3 duration-300 ease-in-out;
+} 
